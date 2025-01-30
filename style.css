@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #E0E0E0;
+    background-color: #0A0A0A;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #111;
+}
+
+.navbar .logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #00d9ff;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #E0E0E0;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #00d9ff;
+}
+
+.begin {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#poster {
+    height: 550px;
+    width: 600px;
+}
+
+.begin button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: linear-gradient(90deg, #00d9ff, #0072ff);
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px rgba(0, 217, 255, 0.6);
+    transition: 0.3s;
+}
+
+.begin button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(0, 217, 255, 0.8);
+}
+
+#reservation, #footer, #gallery {
+    text-align: center;
+    padding: 50px 20px;
+    background: #111;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.form-container img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.form-container form {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 217, 255, 0.3);
+}
+
+.form-container input, .form-container button {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.form-container button {
+    background: #0072ff;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    background: #00d9ff;
+}
+
+#footer .links a, #footer .social-icons img {
+    color: #E0E0E0;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+#footer .social-icons img {
+    width: 55px;
+}
+
+#footer p {
+    color: #888;
+    font-size: 0.9em;
+}
+
+#gallery h2 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #00d9ff;
+    margin-bottom: 20px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0px 0px 15px rgba(0, 217, 255, 0.3);
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgba(0, 217, 255, 0.6);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px;
+    }
+
+    #poster {
+        width: 90%;
+        height: auto;
+    }
+
+    .form-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .logo {
+        font-size: 1.5em;
+    }
+
+    .begin button {
+        padding: 10px 25px;
+        font-size: 1em;
+    }
+
+    .form-container input, .form-container button {
+        width: 100%;
+    }
+
+    #gallery h2 {
+        font-size: 1.5em;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* admin */
+.admin-dashboard {
+    padding: 20px;
+    margin-bottom: 100px; /* Ensure footer doesn't overlap content */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #000000;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    /* Table adjusts for medium screens */
+    table {
+        font-size: 0.9em;
+    }
+
+    .admin-dashboard {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Make the table scrollable on small screens */
+    .admin-dashboard {
+        padding: 15px;
+    }
+
+    table {
+        overflow-x: auto;
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    /* Reduce font size for smaller screens */
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjust table and elements for very small screens */
+    .admin-dashboard {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 0.8em;
+        width: 95%;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    /* Make the logo and text in the footer smaller for mobile */
+    footer p {
+        font-size: 0.75em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+}
