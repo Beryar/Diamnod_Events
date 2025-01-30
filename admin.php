@@ -205,3 +205,45 @@ $paid = $conn->query("SELECT * FROM reservations WHERE status = 'paid'");
 <?php
 $conn->close();
 ?>
+
+
+<!-- index -->
+
+
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "diamond";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $naam = $conn->real_escape_string($_POST['naam']);
+        $email = $conn->real_escape_string($_POST['email']);
+        $normal_tickets = $conn->real_escape_string($_POST['normal_tickets']);
+        $children_tickets = $conn->real_escape_string($_POST['children_tickets']);
+
+        // Prepared statement to insert the form data into the reservations table
+        $sql = "INSERT INTO reservations (naam, email, normal_tickets, children_tickets) VALUES (?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssii", $naam, $email, $normal_tickets, $children_tickets);
+
+        if ($stmt->execute()) {
+            header("Location: index.php");  // Correctly formatted header for redirection
+            exit();  // Ensures no further code is executed after the redirect
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+    }
+
+    $conn->close();
+    ?>
