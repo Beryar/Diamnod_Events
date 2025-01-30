@@ -236,7 +236,7 @@ $conn->close();
         $stmt->bind_param("ssii", $naam, $email, $normal_tickets, $children_tickets);
 
         if ($stmt->execute()) {
-            header("Location: index.php");  // Correctly formatted header for redirection
+            header("Location: index.html");  // Correctly formatted header for redirection
             exit();  // Ensures no further code is executed after the redirect
         } else {
             echo "Error: " . $stmt->error;
